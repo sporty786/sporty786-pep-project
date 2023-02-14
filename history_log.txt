@@ -1,7 +1,7 @@
-commit 653567c75b8a103b5af6ced675a2ffe70e93ec69
+commit 2d11e7ebe8e9ef5ecae804cbb384b7b006c6c4bc
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 20:58:19 2023 +0000
+Date:   Tue Feb 14 20:59:09 2023 +0000
 
-    trying writeValueAsString on returning register
+    removing writeValueAsString
 
- 3 files changed, 1204 insertions(+), 412 deletions(-)
+ 3 files changed, 29 insertions(+), 29 deletions(-)
