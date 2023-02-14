@@ -1,0 +1,443 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.revature:Challenges >-----------------------
+[INFO] Building Challenges 1.1
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M7/maven-surefire-plugin-3.0.0-M7.pom
+Progress (1): 2.7/7.2 kBProgress (1): 5.5/7.2 kBProgress (1): 7.2 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M7/maven-surefire-plugin-3.0.0-M7.pom (7.2 kB at 10 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/3.0.0-M7/surefire-3.0.0-M7.pom
+Progress (1): 2.7/22 kBProgress (1): 5.5/22 kBProgress (1): 8.2/22 kBProgress (1): 11/22 kB Progress (1): 14/22 kBProgress (1): 16/22 kBProgress (1): 19/22 kBProgress (1): 21/22 kBProgress (1): 22 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/3.0.0-M7/surefire-3.0.0-M7.pom (22 kB at 211 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/36/maven-parent-36.pom
+Progress (1): 4.1/45 kBProgress (1): 8.2/45 kBProgress (1): 12/45 kB Progress (1): 16/45 kBProgress (1): 20/45 kBProgress (1): 25/45 kBProgress (1): 29/45 kBProgress (1): 33/45 kBProgress (1): 37/45 kBProgress (1): 41/45 kBProgress (1): 45/45 kBProgress (1): 45 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/36/maven-parent-36.pom (45 kB at 459 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/26/apache-26.pom
+Progress (1): 4.1/21 kBProgress (1): 8.2/21 kBProgress (1): 12/21 kB Progress (1): 16/21 kBProgress (1): 20/21 kBProgress (1): 21 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/26/apache-26.pom (21 kB at 245 kB/s)
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ Challenges ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ Challenges ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 9 source files to /workspace/sporty786-pep-project/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[3,18] package java.Model does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[4,17] package java.Util does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[16,17] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[46,34] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[46,12] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[80,12] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[147,12] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[178,17] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[3,18] package java.Model does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[15,17] cannot find symbol
+  symbol:   class Message
+  location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[27,35] cannot find symbol
+  symbol:   class Message
+  location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[27,13] cannot find symbol
+  symbol:   class Message
+  location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[36,13] cannot find symbol
+  symbol:   class Message
+  location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[45,12] cannot find symbol
+  symbol:   class Message
+  location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[54,13] cannot find symbol
+  symbol:   class Message
+  location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[63,17] cannot find symbol
+  symbol:   class Message
+  location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[3,18] package java.Model does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[3,18] package java.Model does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[4,17] package java.Util does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[29,17] cannot find symbol
+  symbol:   class Account
+  location: class java.Service.AccountService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[40,12] cannot find symbol
+  symbol:   class Account
+  location: class java.Service.AccountService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[60,12] cannot find symbol
+  symbol:   class Account
+  location: class java.Service.AccountService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[16,17] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[45,12] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[80,12] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[113,12] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[17,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[18,14] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[25,17] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[25,39] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[47,32] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[51,13] cannot find symbol
+  symbol:   class PreparedStatment
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[51,49] cannot find symbol
+  symbol:   variable connection
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[54,13] cannot find symbol
+  symbol:   variable preparedStatement
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[55,13] cannot find symbol
+  symbol:   variable preparedStatement
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[56,13] cannot find symbol
+  symbol:   variable preparedStatement
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[57,13] cannot find symbol
+  symbol:   variable preparedStatement
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[59,13] cannot find symbol
+  symbol:   variable preparedStatement
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[61,18] cannot find symbol
+  symbol:   variable connection
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[61,41] cannot find symbol
+  symbol:   variable connection
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[65,18] cannot find symbol
+  symbol:   variable connection
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[65,41] cannot find symbol
+  symbol:   variable connection
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[69,14] cannot find symbol
+  symbol:   variable connection
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[69,37] cannot find symbol
+  symbol:   variable connection
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[81,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[92,17] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[92,39] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[116,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[148,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[165,33] cannot find symbol
+  symbol:   method getMessag()
+  location: variable e of type java.sql.SQLException
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[179,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[180,14] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[190,17] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[190,39] cannot find symbol
+  symbol:   class Message
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[200,13] cannot find symbol
+  symbol:   method connectionisClosed()
+  location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[16,9] cannot find symbol
+  symbol:   class Connection
+  location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[16,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[61,9] cannot find symbol
+  symbol:   class Account
+  location: class java.Service.AccountService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[18,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[20,14] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[27,17] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[27,39] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[47,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[61,28] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[63,16] cannot find symbol
+  symbol:   class SQLEXception
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[82,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[92,17] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[92,39] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[115,33] cannot find symbol
+  symbol:   variable ConnectionUtil
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[125,17] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[125,39] cannot find symbol
+  symbol:   class Account
+  location: class java.DAO.AccountDAO
+[INFO] 71 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.521 s
+[INFO] Finished at: 2023-02-14T05:43:42Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project Challenges: Compilation failure: Compilation failure: 
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[3,18] package java.Model does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[4,17] package java.Util does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[16,17] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[46,34] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[46,12] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[80,12] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[147,12] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[178,17] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[3,18] package java.Model does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[15,17] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[27,35] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[27,13] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[36,13] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[45,12] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[54,13] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[63,17] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[3,18] package java.Model does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[3,18] package java.Model does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[4,17] package java.Util does not exist
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[29,17] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.Service.AccountService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[40,12] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.Service.AccountService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[60,12] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.Service.AccountService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[16,17] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[45,12] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[80,12] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[113,12] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[17,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[18,14] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[25,17] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[25,39] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[47,32] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[51,13] cannot find symbol
+[ERROR]   symbol:   class PreparedStatment
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[51,49] cannot find symbol
+[ERROR]   symbol:   variable connection
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[54,13] cannot find symbol
+[ERROR]   symbol:   variable preparedStatement
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[55,13] cannot find symbol
+[ERROR]   symbol:   variable preparedStatement
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[56,13] cannot find symbol
+[ERROR]   symbol:   variable preparedStatement
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[57,13] cannot find symbol
+[ERROR]   symbol:   variable preparedStatement
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[59,13] cannot find symbol
+[ERROR]   symbol:   variable preparedStatement
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[61,18] cannot find symbol
+[ERROR]   symbol:   variable connection
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[61,41] cannot find symbol
+[ERROR]   symbol:   variable connection
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[65,18] cannot find symbol
+[ERROR]   symbol:   variable connection
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[65,41] cannot find symbol
+[ERROR]   symbol:   variable connection
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[69,14] cannot find symbol
+[ERROR]   symbol:   variable connection
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[69,37] cannot find symbol
+[ERROR]   symbol:   variable connection
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[81,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[92,17] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[92,39] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[116,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[148,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[165,33] cannot find symbol
+[ERROR]   symbol:   method getMessag()
+[ERROR]   location: variable e of type java.sql.SQLException
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[179,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[180,14] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[190,17] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[190,39] cannot find symbol
+[ERROR]   symbol:   class Message
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/MessageDAO.java:[200,13] cannot find symbol
+[ERROR]   symbol:   method connectionisClosed()
+[ERROR]   location: class java.DAO.MessageDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[16,9] cannot find symbol
+[ERROR]   symbol:   class Connection
+[ERROR]   location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/MessageService.java:[16,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.Service.MessageService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/Service/AccountService.java:[61,9] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.Service.AccountService
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[18,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[20,14] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[27,17] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[27,39] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[47,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[61,28] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[63,16] cannot find symbol
+[ERROR]   symbol:   class SQLEXception
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[82,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[92,17] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[92,39] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[115,33] cannot find symbol
+[ERROR]   symbol:   variable ConnectionUtil
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[125,17] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] /workspace/sporty786-pep-project/src/main/java/DAO/AccountDAO.java:[125,39] cannot find symbol
+[ERROR]   symbol:   class Account
+[ERROR]   location: class java.DAO.AccountDAO
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
