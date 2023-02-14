@@ -25,15 +25,12 @@
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running AuthIntegrationTest
-[ERROR] Tests run: 7, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 9.581 s <<< FAILURE! - in AuthIntegrationTest
-[ERROR] AuthIntegrationTest.postRegisterThenPostIncorrectLoginTest  Time elapsed: 3.336 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at AuthIntegrationTest.postRegisterTest(AuthIntegrationTest.java:72)
-	at AuthIntegrationTest.postRegisterThenPostIncorrectLoginTest(AuthIntegrationTest.java:196)
+[ERROR] Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 3.144 s <<< FAILURE! - in AuthIntegrationTest
+[ERROR] AuthIntegrationTest.postRegisterThenPostIncorrectLoginTest  Time elapsed: 2.594 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at AuthIntegrationTest.setUp(AuthIntegrationTest.java:44)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -41,8 +38,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -76,13 +73,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] AuthIntegrationTest.postRegisterShortPasswordTest  Time elapsed: 1.084 s  <<< FAILURE!
-java.lang.AssertionError: expected:<400> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at AuthIntegrationTest.postRegisterShortPasswordTest(AuthIntegrationTest.java:118)
+[ERROR] AuthIntegrationTest.postRegisterShortPasswordTest  Time elapsed: 0.097 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at AuthIntegrationTest.setUp(AuthIntegrationTest.java:44)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -90,8 +85,8 @@ java.lang.AssertionError: expected:<400> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -125,13 +120,11 @@ java.lang.AssertionError: expected:<400> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] AuthIntegrationTest.postLoginEmptyTest  Time elapsed: 1.03 s  <<< FAILURE!
-java.lang.AssertionError: expected:<401> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at AuthIntegrationTest.postLoginEmptyTest(AuthIntegrationTest.java:161)
+[ERROR] AuthIntegrationTest.postLoginEmptyTest  Time elapsed: 0.172 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at AuthIntegrationTest.setUp(AuthIntegrationTest.java:44)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -139,8 +132,8 @@ java.lang.AssertionError: expected:<401> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -174,14 +167,11 @@ java.lang.AssertionError: expected:<401> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] AuthIntegrationTest.postRegisterDuplicateUsernameTest  Time elapsed: 1.026 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at AuthIntegrationTest.postRegisterTest(AuthIntegrationTest.java:72)
-	at AuthIntegrationTest.postRegisterDuplicateUsernameTest(AuthIntegrationTest.java:129)
+[ERROR] AuthIntegrationTest.postRegisterDuplicateUsernameTest  Time elapsed: 0.06 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at AuthIntegrationTest.setUp(AuthIntegrationTest.java:44)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -189,8 +179,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -224,13 +214,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] AuthIntegrationTest.postRegisterTest  Time elapsed: 1.033 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at AuthIntegrationTest.postRegisterTest(AuthIntegrationTest.java:72)
+[ERROR] AuthIntegrationTest.postRegisterTest  Time elapsed: 0.092 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at AuthIntegrationTest.setUp(AuthIntegrationTest.java:44)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -238,8 +226,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -273,13 +261,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] AuthIntegrationTest.postRegisterBlankUsernameTest  Time elapsed: 1.033 s  <<< FAILURE!
-java.lang.AssertionError: expected:<400> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at AuthIntegrationTest.postRegisterBlankUsernameTest(AuthIntegrationTest.java:97)
+[ERROR] AuthIntegrationTest.postRegisterBlankUsernameTest  Time elapsed: 0.061 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at AuthIntegrationTest.setUp(AuthIntegrationTest.java:44)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -287,8 +273,8 @@ java.lang.AssertionError: expected:<400> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -322,14 +308,11 @@ java.lang.AssertionError: expected:<400> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] AuthIntegrationTest.postRegisterThenPostLoginTest  Time elapsed: 1.027 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at AuthIntegrationTest.postRegisterTest(AuthIntegrationTest.java:72)
-	at AuthIntegrationTest.postRegisterThenPostLoginTest(AuthIntegrationTest.java:171)
+[ERROR] AuthIntegrationTest.postRegisterThenPostLoginTest  Time elapsed: 0.045 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at AuthIntegrationTest.setUp(AuthIntegrationTest.java:44)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -337,8 +320,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -373,16 +356,12 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
 [INFO] Running MessagingIntegrationTest
-[ERROR] Tests run: 20, Failures: 20, Errors: 0, Skipped: 0, Time elapsed: 20.542 s <<< FAILURE! - in MessagingIntegrationTest
-[ERROR] MessagingIntegrationTest.postAccountAndMessageThenGetMessageTest  Time elapsed: 1.007 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.postAccountAndMessageThenGetMessageTest(MessagingIntegrationTest.java:207)
+[ERROR] Tests run: 20, Failures: 0, Errors: 20, Skipped: 0, Time elapsed: 0.981 s <<< FAILURE! - in MessagingIntegrationTest
+[ERROR] MessagingIntegrationTest.postAccountAndMessageThenGetMessageTest  Time elapsed: 0.068 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -390,8 +369,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -425,13 +404,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.deleteMessageNonExistentMessageTest  Time elapsed: 1.031 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.deleteMessageNonExistentMessageTest(MessagingIntegrationTest.java:391)
+[ERROR] MessagingIntegrationTest.deleteMessageNonExistentMessageTest  Time elapsed: 0.055 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -439,8 +416,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -474,14 +451,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postAccountAndBlankMessage  Time elapsed: 1.027 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndBlankMessage(MessagingIntegrationTest.java:184)
+[ERROR] MessagingIntegrationTest.postAccountAndBlankMessage  Time elapsed: 0.059 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -489,8 +463,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -524,15 +498,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.patchMessageTest  Time elapsed: 1.045 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.patchMessageTest(MessagingIntegrationTest.java:465)
+[ERROR] MessagingIntegrationTest.patchMessageTest  Time elapsed: 0.095 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -540,8 +510,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -575,16 +545,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postManyUsersAndMessagesThenGetAllMessages  Time elapsed: 1.031 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.postManyAccountsAndMessagesTest(MessagingIntegrationTest.java:254)
-	at MessagingIntegrationTest.postManyUsersAndMessagesThenGetAllMessages(MessagingIntegrationTest.java:298)
+[ERROR] MessagingIntegrationTest.postManyUsersAndMessagesThenGetAllMessages  Time elapsed: 0.031 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -592,8 +557,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -627,16 +592,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postManyAccountsAndMessagesThenGetMessagesByAccountIdTest  Time elapsed: 1.025 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.postManyAccountsAndMessagesTest(MessagingIntegrationTest.java:254)
-	at MessagingIntegrationTest.postManyAccountsAndMessagesThenGetMessagesByAccountIdTest(MessagingIntegrationTest.java:349)
+[ERROR] MessagingIntegrationTest.postManyAccountsAndMessagesThenGetMessagesByAccountIdTest  Time elapsed: 0.05 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -644,8 +604,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -679,15 +639,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.deleteMessageTest  Time elapsed: 1.026 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.deleteMessageTest(MessagingIntegrationTest.java:404)
+[ERROR] MessagingIntegrationTest.deleteMessageTest  Time elapsed: 0.059 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -695,8 +651,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -730,13 +686,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postMessageNonExistentAccountTest  Time elapsed: 1.028 s  <<< FAILURE!
-java.lang.AssertionError: expected:<400> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postMessageNonExistentAccountTest(MessagingIntegrationTest.java:95)
+[ERROR] MessagingIntegrationTest.postMessageNonExistentAccountTest  Time elapsed: 0.028 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -744,8 +698,8 @@ java.lang.AssertionError: expected:<400> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -779,16 +733,11 @@ java.lang.AssertionError: expected:<400> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.getMessageAfterPatchTest  Time elapsed: 1.033 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.patchMessageTest(MessagingIntegrationTest.java:465)
-	at MessagingIntegrationTest.getMessageAfterPatchTest(MessagingIntegrationTest.java:490)
+[ERROR] MessagingIntegrationTest.getMessageAfterPatchTest  Time elapsed: 0.068 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -796,8 +745,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -831,14 +780,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postAccountAndTooLongMessage  Time elapsed: 1.023 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndTooLongMessage(MessagingIntegrationTest.java:157)
+[ERROR] MessagingIntegrationTest.postAccountAndTooLongMessage  Time elapsed: 0.039 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -846,8 +792,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -881,15 +827,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.patchMessageTooLongTest  Time elapsed: 1.036 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.patchMessageTooLongTest(MessagingIntegrationTest.java:512)
+[ERROR] MessagingIntegrationTest.patchMessageTooLongTest  Time elapsed: 0.035 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -897,8 +839,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -932,13 +874,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.getMessagesByAccountIdEmpty  Time elapsed: 1.031 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.getMessagesByAccountIdEmpty(MessagingIntegrationTest.java:334)
+[ERROR] MessagingIntegrationTest.getMessagesByAccountIdEmpty  Time elapsed: 0.05 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -946,8 +886,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -981,16 +921,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.deletedMessageShouldNotExistTest  Time elapsed: 1.031 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.deleteMessageTest(MessagingIntegrationTest.java:404)
-	at MessagingIntegrationTest.deletedMessageShouldNotExistTest(MessagingIntegrationTest.java:426)
+[ERROR] MessagingIntegrationTest.deletedMessageShouldNotExistTest  Time elapsed: 0.042 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -998,8 +933,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -1033,15 +968,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.patchMessageBlankTest  Time elapsed: 1.027 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.patchMessageBlankTest(MessagingIntegrationTest.java:537)
+[ERROR] MessagingIntegrationTest.patchMessageBlankTest  Time elapsed: 0.027 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1049,8 +980,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -1084,13 +1015,11 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.patchMessageNonExistentMessageTest  Time elapsed: 1.022 s  <<< FAILURE!
-java.lang.AssertionError: expected:<400> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.patchMessageNonExistentMessageTest(MessagingIntegrationTest.java:454)
+[ERROR] MessagingIntegrationTest.patchMessageNonExistentMessageTest  Time elapsed: 0.066 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1098,8 +1027,8 @@ java.lang.AssertionError: expected:<400> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -1133,15 +1062,11 @@ java.lang.AssertionError: expected:<400> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postManyAccountsAndMessagesTest  Time elapsed: 1.021 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.postManyAccountsAndMessagesTest(MessagingIntegrationTest.java:254)
+[ERROR] MessagingIntegrationTest.postManyAccountsAndMessagesTest  Time elapsed: 0.025 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1149,8 +1074,8 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -1184,22 +1109,19 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.getAllMessagesEmptyTest  Time elapsed: 1.02 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.getAllMessagesEmptyTest(MessagingIntegrationTest.java:70)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[ERROR] MessagingIntegrationTest.getAllMessagesEmptyTest  Time elapsed: 0.027 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -1233,23 +1155,19 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postAccountAndMessageTest  Time elapsed: 1.023 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[ERROR] MessagingIntegrationTest.postAccountAndMessageTest  Time elapsed: 0.027 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -1283,22 +1201,19 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postAccountTest  Time elapsed: 1.026 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[ERROR] MessagingIntegrationTest.postAccountTest  Time elapsed: 0.058 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -1332,24 +1247,19 @@ java.lang.AssertionError: expected:<200> but was:<404>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postAccountAndMessageAndGetAllMessagesTest  Time elapsed: 1.025 s  <<< FAILURE!
-java.lang.AssertionError: expected:<200> but was:<404>
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at MessagingIntegrationTest.postAccountTest(MessagingIntegrationTest.java:117)
-	at MessagingIntegrationTest.postAccountAndMessageTest(MessagingIntegrationTest.java:128)
-	at MessagingIntegrationTest.postAccountAndMessageAndGetAllMessagesTest(MessagingIntegrationTest.java:230)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[ERROR] MessagingIntegrationTest.postAccountAndMessageAndGetAllMessagesTest  Time elapsed: 0.07 s  <<< ERROR!
+java.lang.IllegalStateException: Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+	at io.javalin.Javalin.start(Javalin.java:164)
+	at io.javalin.Javalin.start(Javalin.java:148)
+	at MessagingIntegrationTest.setUp(MessagingIntegrationTest.java:48)
+	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
@@ -1386,44 +1296,44 @@ java.lang.AssertionError: expected:<200> but was:<404>
 [INFO] 
 [INFO] Results:
 [INFO] 
-[ERROR] Failures: 
-[ERROR]   AuthIntegrationTest.postLoginEmptyTest:161 expected:<401> but was:<404>
-[ERROR]   AuthIntegrationTest.postRegisterBlankUsernameTest:97 expected:<400> but was:<404>
-[ERROR]   AuthIntegrationTest.postRegisterDuplicateUsernameTest:129->postRegisterTest:72 expected:<200> but was:<404>
-[ERROR]   AuthIntegrationTest.postRegisterShortPasswordTest:118 expected:<400> but was:<404>
-[ERROR]   AuthIntegrationTest.postRegisterTest:72 expected:<200> but was:<404>
-[ERROR]   AuthIntegrationTest.postRegisterThenPostIncorrectLoginTest:196->postRegisterTest:72 expected:<200> but was:<404>
-[ERROR]   AuthIntegrationTest.postRegisterThenPostLoginTest:171->postRegisterTest:72 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.deleteMessageNonExistentMessageTest:391 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.deleteMessageTest:404->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.deletedMessageShouldNotExistTest:426->deleteMessageTest:404->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.getAllMessagesEmptyTest:70 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.getMessageAfterPatchTest:490->patchMessageTest:465->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.getMessagesByAccountIdEmpty:334 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.patchMessageBlankTest:537->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.patchMessageNonExistentMessageTest:454 expected:<400> but was:<404>
-[ERROR]   MessagingIntegrationTest.patchMessageTest:465->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.patchMessageTooLongTest:512->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postAccountAndBlankMessage:184->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postAccountAndMessageAndGetAllMessagesTest:230->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postAccountAndMessageThenGetMessageTest:207->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postAccountAndTooLongMessage:157->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postManyAccountsAndMessagesTest:254->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postManyAccountsAndMessagesThenGetMessagesByAccountIdTest:349->postManyAccountsAndMessagesTest:254->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postManyUsersAndMessagesThenGetAllMessages:298->postManyAccountsAndMessagesTest:254->postAccountAndMessageTest:128->postAccountTest:117 expected:<200> but was:<404>
-[ERROR]   MessagingIntegrationTest.postMessageNonExistentAccountTest:95 expected:<400> but was:<404>
+[ERROR] Errors: 
+[ERROR]   AuthIntegrationTest.setUp:44 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   AuthIntegrationTest.setUp:44 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   AuthIntegrationTest.setUp:44 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   AuthIntegrationTest.setUp:44 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   AuthIntegrationTest.setUp:44 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   AuthIntegrationTest.setUp:44 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   AuthIntegrationTest.setUp:44 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
+[ERROR]   MessagingIntegrationTest.setUp:48 » IllegalState Server already started. If you are trying to call start() on an instance of Javalin that was stopped using stop(), please create a new instance instead.
 [INFO] 
-[ERROR] Tests run: 27, Failures: 27, Errors: 0, Skipped: 0
+[ERROR] Tests run: 27, Failures: 0, Errors: 27, Skipped: 0
 [INFO] 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  39.025 s
-[INFO] Finished at: 2023-02-14T06:50:34Z
+[INFO] Total time:  12.526 s
+[INFO] Finished at: 2023-02-14T07:16:41Z
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M7:test (default-test) on project Challenges: There are test failures.
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M7:test (default-test) on project Challenges: 
 [ERROR] 
 [ERROR] Please refer to /workspace/sporty786-pep-project/target/surefire-reports for the individual test results.
 [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.

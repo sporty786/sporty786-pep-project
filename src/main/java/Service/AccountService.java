@@ -31,13 +31,14 @@ public class AccountService {
     }
 
     /**
-    * Registers a new user account with the given
+    * Registers a new user account with the given account information.
+    * Username must not be blank, password must be at least 4 characters long, and 
+    * an account with the same username must not already exist.
+    * Returns new account if successful, null if unsuccessful.
     * @param account.
-    * If successful
     * @return Account
-    * If unsuccessful returns null.
     */
-    public Account userRegistration(Model.Account account){
+    public Account userRegistration(Account account){
         String username = account.getUsername();
         // Username is not blank
         if ((username == null) || (username.isBlank())){return null;}
@@ -49,13 +50,12 @@ public class AccountService {
     }
 
     /**
-     * Check that the provided 
+     * Check that the provided  username and password match an existing entry
+     * in the database. Return the account if it matches, or null if no such account exists
+     * or the passwords don't match.
      * @param username
      * @param password
-     * match an existing corresponding entry in the database.
      * @return Account
-     * that it matches.
-     * Return null if no such account exists, or the password doesn't match.
      */
     public Account login(String username, String password){
         Account account = accountDAO.getAccountByUsername(username);
@@ -66,6 +66,11 @@ public class AccountService {
         return null;
     }
 
+    /**
+     * Return the Account with the associated given account_id. Return null if none such exists.
+     * @param account_id
+     * @return Account
+     */
     public Account getAccountByAccountId(int account_id){
         return accountDAO.getAccountByAccountId(account_id);
     }

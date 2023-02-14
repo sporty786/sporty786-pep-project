@@ -1,7 +1,7 @@
-commit 586a00fc2c7320c398d75ddf9b77a0ecd488a946
+commit 18e8a0a12d329bf698082d92ab3f4cfbdd1a6f39
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 06:49:39 2023 +0000
+Date:   Tue Feb 14 07:16:24 2023 +0000
 
-    Finished DAO and Service classes
+    Controller bare bones
 
- 3 files changed, 35 insertions(+), 39 deletions(-)
+ 3 files changed, 72 insertions(+), 33 deletions(-)
