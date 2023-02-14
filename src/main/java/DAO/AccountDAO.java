@@ -11,7 +11,7 @@ public class AccountDAO {
 
     /**
     * Retrieves all users from the user table.
-    * @return all authors
+    * @return all Acounts
     */
     public List<Account> getAllAccounts(){
         // Establish connection to database
@@ -36,7 +36,8 @@ public class AccountDAO {
 
     /**
      * Registers a new user account with the given
-     * @param account.
+     * @param account
+     * @return Account
      */
     public Account userRegistration(Model.Account account){
         // Set up connection to database
@@ -61,11 +62,10 @@ public class AccountDAO {
     }
 
     /**
-     * Seach the database for the given
+     * Seach the database for the account with the given account_it, returning
+     * the associated account, null if none exists.
      * @param account_id
-     * and if found,
      * @return Account
-     * associated with that id.
      */
     public Account getAccountByAccountId(int account_id){
         // Create new connection
@@ -80,8 +80,6 @@ public class AccountDAO {
             // Return account from result set that matches given query
             while(rs.next()){
                 Account account = new Account(rs.getInt("account_id"), rs.getString("username"), rs.getString("password"));
-                // Close connection if account successfully found
-                if (!connection.isClosed()){connection.close();}
                 return account;
             }
         }catch(SQLException e){
@@ -91,10 +89,10 @@ public class AccountDAO {
     }
 
     /**
-     * @return Account
-     * by the
+     * Return the account associated with the given username, null if
+     * none exists.
      * @param username
-     * from the account table. Return null if it does not exist.
+     * @return Account
      */
     public Account getAccountByUsername(String username){
         // Create new connection

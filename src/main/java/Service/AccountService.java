@@ -66,4 +66,7 @@ public class AccountService {
         return null;
     }
 
+    public Account getAccountByAccountId(int account_id){
+        return accountDAO.getAccountByAccountId(account_id);
+    }
 }

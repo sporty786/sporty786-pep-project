@@ -10,8 +10,8 @@ import java.util.List;
 public class MessageDAO {
     
     /**
+     * Return a list of all messages in the database, empty list if none.
     * @return List<Message> 
-    * of all messages in database. Return empty list if no messages.
     */
     public List<Message> getAllMessages(){
         Connection connection = ConnectionUtil.getConnection();
@@ -33,11 +33,9 @@ public class MessageDAO {
     }
 
     /**
-    * Create a new
+    * Create a new message entry in the database, returning new Message if successful, null otherwise.
     * @param message
-    * entry in the database and if successful,
     * @return Message
-    * of the inserted message. If unsuccessful, return null.
     */
     public Message createMessage(Message message){
         Connection connection = ConnectionUtil.getConnection();
@@ -65,11 +63,10 @@ public class MessageDAO {
     }
 
     /**
-    * Search the database for a given message given it's
+    * Search the database for a given message given it's message_id and return if
+    successful. If unsuccesful return null.
     * @param message_id
-    * and if successful, 
     * @return Message
-    * If unsuccessful return null.
     */
     public Message getMessageByMessageId(int message_id){
         Connection connection = ConnectionUtil.getConnection();
@@ -94,11 +91,10 @@ public class MessageDAO {
     }
 
     /**
-    * Remove a message from the database with the id
+    * Remove a message from the database with the id of the given message_id. Return the
+    * number of rows affected by the update.
     * @param message_id.
-    * If successful, 
-    * @return Message
-    * (the message now deleted), returning the number of updated rows.
+    * @return int
     */
     public int deleteMessageByMessageId(int message_id){
         Connection connection = ConnectionUtil.getConnection();
@@ -121,12 +117,11 @@ public class MessageDAO {
     }
 
     /**
-    * Modify a message body by the message id with
+    * Modify a message body of the message with the given message_id. If 
+    successful return the new updated message. Else return null.
     * @param message_id
     * @param message_text
-    * If successful,
     * @return Message
-    * (the new updated message)
     */
     public Message updateMessageByMessageId(int message_id, String message_text){
         Connection connection = ConnectionUtil.getConnection();
@@ -148,11 +143,10 @@ public class MessageDAO {
     }
 
     /**
-    * Given a 
+    * Given a user_id foreign key for posted_by entries in the message table,
+    return a list of all messages posted by that user.
     * @param user_id
-    * foreign key for posted_by entries in the message table, 
     * @return List<Message>
-    * a list of all messages posted by that user.
     */
     public List<Message> getAllMessagesByAccountId(int account_id){
         Connection connection = ConnectionUtil.getConnection();
@@ -175,8 +169,4 @@ public class MessageDAO {
         }
         return messages;
     }
-
-    /** 
-     * @return 
-     */
 }
