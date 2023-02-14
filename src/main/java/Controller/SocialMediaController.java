@@ -55,7 +55,7 @@ public class SocialMediaController {
         Account account = om.readValue(ctx.body(), Account.class);
         Account newAccount = accountService.userRegistration(account);
         if (newAccount != null){
-            ctx.json(om.writeValueAsString(newAccount));
+            ctx.json(newAccount);
             ctx.status(200);
         } else {ctx.status(400);}
     }

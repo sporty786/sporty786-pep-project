@@ -1,7 +1,7 @@
-commit 8c92ffe6cc4831277c18ef527b56d70a94a1456e
+commit 653567c75b8a103b5af6ced675a2ffe70e93ec69
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 20:56:55 2023 +0000
+Date:   Tue Feb 14 20:58:19 2023 +0000
 
-    Continued debugging and testing
+    trying writeValueAsString on returning register
 
- 2 files changed, 30 insertions(+), 24 deletions(-)
+ 3 files changed, 1204 insertions(+), 412 deletions(-)
