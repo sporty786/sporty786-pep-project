@@ -1,7 +1,7 @@
-commit 18e8a0a12d329bf698082d92ab3f4cfbdd1a6f39
+commit e97b0b4c1577cabe48a88a435eee1e81df4ee5c4
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 07:16:24 2023 +0000
+Date:   Tue Feb 14 07:25:13 2023 +0000
 
-    Controller bare bones
+    Beginning Control, updated some documentation
 
- 3 files changed, 72 insertions(+), 33 deletions(-)
+ 4 files changed, 254 insertions(+), 330 deletions(-)

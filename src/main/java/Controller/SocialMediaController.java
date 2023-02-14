@@ -8,6 +8,7 @@ import Service.AccountService;
 import Service.MessageService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.List;
 
 /**
  * TODO: You will need to write your own endpoints and handlers for your controller. The endpoints you will need can be
@@ -42,30 +43,120 @@ public class SocialMediaController {
         return app;
     }
 
+    /**
+     * Handler to register a new user. Returns in response body new Account as a JSON 
+     * representation if successful. Returns status code 400 if unsuccessful.
+     * @param ctx
+     * @throws JsonProcessingException will be thrown if there is an issue converting JSON into an object.
+     */
     private void postUserRegistrationHandler(Context ctx) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        Account account = mapper.readValue(ctx.body(), Account.class);
+        ObjectMapper om = new ObjectMapper();
+        Account account = om.readValue(ctx.body(), Account.class);
         Account newAccount = accountService.userRegistration(account);
         if (newAccount != null){
-            ctx.json(mapper.writeValueAsString(newAccount));
+            ctx.json(om.writeValueAsString(newAccount));
             ctx.status(200);
-        }
-        else{ctx.status(400);}
+        } else {ctx.status(400);}
     }
 
-    private void postLoginHandler(Context ctx) throws JsonProcessingException {}
+    /**
+     * Handler to post a new login. Returns in response body the corresponding Account object as a JSON
+     * representation if successful. Returns status code 400 if unsuccessful.
+     * @param ctx
+     * @throws JsonProcessingException will be thrown if there is an issue converting JSON into an object.
+     */
+    private void postLoginHandler(Context ctx) throws JsonProcessingException {
+        ObjectMapper om = new ObjectMapper();
+        Account account = om.readValue(ctx.body(), Account.class);
+        Account checkAccount = accountService.login(account.getUsername(), account.getPassword());
+        if (checkAccount != null){
+            ctx.json(om.writeValueAsString(checkAccount));
+            ctx.status(200);
+        } else {ctx.status(401);}
+    }
 
-    private void postCreateNewMessageHandler(Context ctx) throws JsonProcessingException {}
+    /** 
+     * Handler to post a new message. Returns status code 400 if unsuccessful, otherwise returns
+     * new Message as a JSON representation in response body.
+     * @param ctx
+     * @throws JsonProcessingException will be thrown if there is an issue converting JSON into an object.
+     */
+    private void postCreateNewMessageHandler(Context ctx) throws JsonProcessingException {
+        ObjectMapper om = new ObjectMapper();
+        Message message = om.readValue(ctx.body(), Message.class);
+        Message newMessage = messageService.createMessage(message);
+        if (newMessage != null){
+            ctx.json(om.writeValueAsString(newMessage));
+            ctx.status(200);
+        } else {ctx.status(400);}
+    }
 
-    private void getAllMessagesHandler(Context ctx){}
+    /**
+     * Handler to return a list of all messages in response body.
+     * @param ctx
+     */
+    private void getAllMessagesHandler(Context ctx){
+        List<Message> messages = messageService.getAllMessages();
+        ctx.json(messages);
+        ctx.status(200);
+    }
     
-    private void getOneMessageGivenMessageIdHandler(Context ctx){}
+    /**
+     * Handler to get a message from the given message_id. Response body contains the Message if 
+     * successful, or an empty response body if unsuccessful.
+     * @param ctx
+     * @throws JsonProcessingException will be thrown if there is an issue converting object into JSON.
+     */
+    private void getOneMessageGivenMessageIdHandler(Context ctx) throws JsonProcessingException{
+        ObjectMapper om = new ObjectMapper();
+        int message_id = Integer.parseInt(ctx.pathParam("message_id"));
+        Message message = messageService.getMessageByMessageId(message_id);
+        if (message != null){ctx.json(om.writeValueAsString(message));}
+        ctx.status(200);
+    }
 
-    private void deleteMessageGivenMessageIdHandler(Context ctx){}
+    /**
+     * Handler to delete a message with the given message_id. Response body contains the deleted 
+     * message if successful, or an empty response body if the message did not exist. 
+     * @param ctx
+     * @throws JsonProcessingException will be thrown if there is an issue converting object into JSON.
+     */
+    private void deleteMessageGivenMessageIdHandler(Context ctx) throws JsonProcessingException {
+        ObjectMapper om = new ObjectMapper();
+        int message_id = Integer.parseInt(ctx.pathParam("message_id"));
+        Message message = messageService.deleteMessageByMessageId(message_id);
+        if (message != null){ctx.json(om.writeValueAsString(message));}
+        ctx.status(200);
+    }
 
-    private void patchMessageGivenMessageIdHandler(Context ctx){}
+    /**
+     * Handler to patch the message with the given message_id to update it's message_text.
+     * If successful, response body contains full updated message. Else returns status code 400.
+     * @param ctx
+     * @throws JsonProcessingException will be thrown if there is an issue converting JSON into an object.
+     */
+    private void patchMessageGivenMessageIdHandler(Context ctx)throws JsonProcessingException {
+        ObjectMapper om = new ObjectMapper();
+        String message_text = om.readValue(ctx.body(), String.class);
+        int message_id = Integer.parseInt(ctx.pathParam("message_id"));
+        Message message = messageService.updateMessageByMessageId(message_id, message_text);
+        if (message != null){
+            ctx.json(om.writeValueAsString(message));
+            ctx.status(200);
+        } else {ctx.status(400);}
+    }
 
-    private void getAllMessagesFromUserGivenAccountIdHandler(Context ctx){}
+    /**
+     * Handler to get all messages posted by a user with the given account_id. Returns
+     * list of those messages if successful, else returns an empty list if none exist.
+     * @param ctx
+     */
+    private void getAllMessagesFromUserGivenAccountIdHandler(Context ctx){
+        int account_id = Integer.parseInt(ctx.pathParam("account_id"));
+        List<Message> messages = messageService.getAllMessagesByAccountId(account_id);
+        ctx.json(messages);
+        ctx.status(200);
+    }
 
 
 
