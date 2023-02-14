@@ -1,7 +1,7 @@
-commit 999d349a908a38e287bbe4896499f75c7c2f4f9b
+commit 11a244d10440c1c40c0bcb629ed820538e714c6a
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 05:44:01 2023 +0000
+Date:   Tue Feb 14 06:02:37 2023 +0000
 
-    Finished AccountDAO, MessageDAO and AccountService
+    Fixed some grammatical and logic errors in DAOs
 
- 6 files changed, 798 insertions(+), 90 deletions(-)
+ 5 files changed, 1653 insertions(+), 510 deletions(-)

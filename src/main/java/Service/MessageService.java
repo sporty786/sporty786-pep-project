@@ -1,20 +1,32 @@
-package java.Service;
+package Service;
 
-import java.Model.Account;
-import java.DAO.AccountDAO;
+import Model.Message;
+import DAO.MessageDAO;
 
 import java.util.List;
 
 public class MessageService {
+    private MessageDAO messageDAO;
 
+    // no args constructor for creating an account service
+    public MessageService(){
+        messageDAO = new MessageDAO();
+    }
 
+    /**
+     * Constructor for a AccountService when a AccountDAO is provided.
+     * Used for mock AccountDAO test cases to allow testing of AccountService independently of AccountDAO.
+     * @param accountDAO
+     */
+    public MessageService(MessageDAO messageDAO){
+        this.messageDAO = messageDAO;
+    }
     /**
     * @return List<Message> 
     * of all messages in database. Return empty list if no messages.
     */
     public List<Message> getAllMessages(){
-        Connection connection = ConnectionUtil.getConnection();
-        
+        return messageDAO.getAllMessages();
     }
 
     /**
@@ -24,7 +36,14 @@ public class MessageService {
      * @return Message
      * of the inserted message. If unsuccessful, return null.
     */
-     public Message createMessage(Message message){}
+     public Message createMessage(Message message){
+        String message_text = message.getMessage_text();
+        // message_text cannot be blank
+        if ((message_text == null) || message_text.isBlank()){return null;}
+        // message_text must be under 255 characters
+        else if (message_text.length() >= 255){return null;}
+        // posted_by must refer to existing user
+     }
 
     /**
      * Search the database for a given message given it's

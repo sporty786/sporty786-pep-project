@@ -40,11 +40,11 @@ public class AccountService {
     public Account userRegistration(Model.Account account){
         String username = account.getUsername();
         // Username is not blank
-        if ((username == null) || (username.trim().isEmpty())){return null;}
+        if ((username == null) || (username.isBlank())){return null;}
         // Password must be at least 4 letters long
-        if (account.getPassword().length() < 4){return null;}
+        else if (account.getPassword().length() < 4){return null;}
         // Account with username does not already exist
-        if (accountDAO.getAccountByUsername(username) != null){return null;}
+        else if (accountDAO.getAccountByUsername(username) != null){return null;}
         return accountDAO.userRegistration(account);
     }
 
