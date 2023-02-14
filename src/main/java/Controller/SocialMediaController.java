@@ -38,6 +38,7 @@ public class SocialMediaController {
         app.delete("/messages/{message_id}", this::deleteMessageGivenMessageIdHandler);
         app.patch("/messages/{message_id}", this::patchMessageGivenMessageIdHandler);
         app.get("/accounts/{account_id}/messages", this::getAllMessagesFromUserGivenAccountIdHandler);
+        app.get("/accounts", this::getAllAccountsHandler);
 
         return app;
     }
@@ -49,7 +50,7 @@ public class SocialMediaController {
      * @throws JsonProcessingException will be thrown if there is an issue converting JSON into an object.
      */
     private void postUserRegistrationHandler(Context ctx) throws JsonProcessingException {
-        System.out.println("Accessed POST Registration Handler.");
+        System.out.println("\nAccessed POST Registration Handler.");
         ObjectMapper om = new ObjectMapper();
         Account account = om.readValue(ctx.body(), Account.class);
         Account newAccount = accountService.userRegistration(account);
@@ -66,6 +67,7 @@ public class SocialMediaController {
      * @throws JsonProcessingException will be thrown if there is an issue converting JSON into an object.
      */
     private void postLoginHandler(Context ctx) throws JsonProcessingException {
+        System.out.println("\nAccessed postLoginHandler");
         ObjectMapper om = new ObjectMapper();
         Account account = om.readValue(ctx.body(), Account.class);
         Account checkAccount = accountService.login(account.getUsername(), account.getPassword());
@@ -82,6 +84,7 @@ public class SocialMediaController {
      * @throws JsonProcessingException will be thrown if there is an issue converting JSON into an object.
      */
     private void postCreateNewMessageHandler(Context ctx) throws JsonProcessingException {
+        System.out.println("\nAccessed postCreateNewMessageHandler");
         ObjectMapper om = new ObjectMapper();
         Message message = om.readValue(ctx.body(), Message.class);
         Message newMessage = messageService.createMessage(message);
@@ -96,6 +99,7 @@ public class SocialMediaController {
      * @param ctx
      */
     private void getAllMessagesHandler(Context ctx){
+        System.out.println("\nAccessed getAllMessagesHandler.");
         List<Message> messages = messageService.getAllMessages();
         ctx.json(messages);
         ctx.status(200);
@@ -108,6 +112,7 @@ public class SocialMediaController {
      * @throws JsonProcessingException will be thrown if there is an issue converting object into JSON.
      */
     private void getOneMessageGivenMessageIdHandler(Context ctx) throws JsonProcessingException{
+        System.out.println("\nAccessed getOneMessageGivenMessageIdHandler.");
         ObjectMapper om = new ObjectMapper();
         int message_id = Integer.parseInt(ctx.pathParam("message_id"));
         Message message = messageService.getMessageByMessageId(message_id);
@@ -122,6 +127,7 @@ public class SocialMediaController {
      * @throws JsonProcessingException will be thrown if there is an issue converting object into JSON.
      */
     private void deleteMessageGivenMessageIdHandler(Context ctx) throws JsonProcessingException {
+        System.out.println("\nAccessed deleteMessageGivenMessageIdHandler.");
         ObjectMapper om = new ObjectMapper();
         int message_id = Integer.parseInt(ctx.pathParam("message_id"));
         Message message = messageService.deleteMessageByMessageId(message_id);
@@ -136,6 +142,7 @@ public class SocialMediaController {
      * @throws JsonProcessingException will be thrown if there is an issue converting JSON into an object.
      */
     private void patchMessageGivenMessageIdHandler(Context ctx)throws JsonProcessingException {
+        System.out.println("\nAccessed patchMessageGivenMessageIdHandler.");
         ObjectMapper om = new ObjectMapper();
         String message_text = om.readValue(ctx.body(), String.class);
         int message_id = Integer.parseInt(ctx.pathParam("message_id"));
@@ -152,9 +159,17 @@ public class SocialMediaController {
      * @param ctx
      */
     private void getAllMessagesFromUserGivenAccountIdHandler(Context ctx){
+        System.out.println("\nAccessed getAllMessagesFromUserGivenAccountIdHandler.");
         int account_id = Integer.parseInt(ctx.pathParam("account_id"));
         List<Message> messages = messageService.getAllMessagesByAccountId(account_id);
         ctx.json(messages);
+        ctx.status(200);
+    }
+
+    private void getAllAccountsHandler(Context ctx){
+        System.out.println("\nAccessed getAllAccountsHandler.");
+        List<Account> accounts = accountService.getAllAccounts();
+        ctx.json(accounts);
         ctx.status(200);
     }
 
