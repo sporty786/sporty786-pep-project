@@ -1,7 +1,7 @@
-commit 9655a889b310a632baf3c2b4869d4180771a3ab2
+commit 262627b411b4e78e289793bca45fd852832546d1
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 06:22:38 2023 +0000
+Date:   Tue Feb 14 06:47:10 2023 +0000
 
-    Updated DAOs and AccountService, some MessageServi
+    Finished both Service classes
 
- 5 files changed, 63 insertions(+), 234 deletions(-)
+ 6 files changed, 93 insertions(+), 89 deletions(-)
