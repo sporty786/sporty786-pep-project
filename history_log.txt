@@ -1,7 +1,7 @@
-commit 57a0f52f40802dc1699334d7b6d34a383e05e142
+commit 8c92ffe6cc4831277c18ef527b56d70a94a1456e
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 20:48:41 2023 +0000
+Date:   Tue Feb 14 20:56:55 2023 +0000
 
-    Fixed password comparison in login
+    Continued debugging and testing
 
- 4 files changed, 68 insertions(+), 29 deletions(-)
+ 2 files changed, 30 insertions(+), 24 deletions(-)
