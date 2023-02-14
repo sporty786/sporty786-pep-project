@@ -1,7 +1,7 @@
-commit 262627b411b4e78e289793bca45fd852832546d1
+commit 586a00fc2c7320c398d75ddf9b77a0ecd488a946
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 06:47:10 2023 +0000
+Date:   Tue Feb 14 06:49:39 2023 +0000
 
-    Finished both Service classes
+    Finished DAO and Service classes
 
- 6 files changed, 93 insertions(+), 89 deletions(-)
+ 3 files changed, 35 insertions(+), 39 deletions(-)
