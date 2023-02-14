@@ -1,7 +1,7 @@
-commit 77447de5b010629ec88e2be7da04a489b49cc67e
+commit 4464d55f196b69ded5d94617495c158aa1b96336
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 08:09:53 2023 +0000
+Date:   Tue Feb 14 08:10:50 2023 +0000
 
-    Completed DAOs, Services and Controller
+    Completed both DAOs, both Services and Controller
 
- 3 files changed, 138 insertions(+), 47 deletions(-)
+ 2 files changed, 33 insertions(+), 33 deletions(-)
