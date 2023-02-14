@@ -1,7 +1,7 @@
-package java.DAO;
+package DAO;
 
-import java.Model.Account;
-import java.Util.ConnectionUtil;
+import Model.Account;
+import Util.ConnectionUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,19 +21,15 @@ public class AccountDAO {
         try{
             // SQL logic
             String sql = "SELECT * FROM account;";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            ResultSet rs = preparedStatement.executeQuery();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 Account account = new Account(rs.getInt("account_id"), rs.getString("username"), rs.getString("password"));
                 accounts.add(account);
             }
         } catch(SQLException e){
-            // Close connection to avoid leak if catch triggered
-            if (!connection.isClosed()){connection.close();}
             System.out.println(e.getMessage());
         }
-        // Close connection to avoid leak if catch not triggered
-        if (!connection.isClosed()){connection.close();}
         // Return list of all user accounts
         return accounts;
     }
@@ -48,25 +44,19 @@ public class AccountDAO {
         try{
             // SQL logic
             String sql = "INSERT INTO account (username, password) VALUES (?, ?);";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             // Set parameter values in SQL prepared statement
-            preparedStatement.setString(1, account.getUsername());
-            preparedStatement.setString(2, account.getPassword());
-            preparedStatement.executeUpdate();
-            ResultSet pkeyResultSet = preparedStatement.getGeneratedKeys();
-            if(pkeyResultSet.next()){
-                int generated_account_id = (int) pkeyResultSet.getLong(1);
-                // Close connection if account successfully created to prevent leak
-                if (!connection.isClosed()){connection.close();}
-                return new Account(generated_account_id, account.getUsername());
+            ps.setString(1, account.getUsername());
+            ps.setString(2, account.getPassword());
+            ps.executeUpdate();
+            ResultSet pkeyRS = ps.getGeneratedKeys();
+            if(pkeyRS.next()){
+                int generated_account_id = (int) pkeyRS.getLong(1);
+                return new Account(generated_account_id, account.getUsername(), account.getPassword());
             }
-        }catch(SQLEXception e){
-            // Close connection to prevent leak if error triggered
-            if (!connection.isClosed()){connection.close();}
+        }catch(SQLException e){
             System.out.println(e.getMessage());
         }
-        // Close connection to prevent leak if try statement successful but new account not created
-        if (!connection.isClosed()){connection.close();}
         return null;
     }
 
@@ -83,10 +73,10 @@ public class AccountDAO {
         try{
             // SQL logic
             String sql = "SELECT * FROM account WHERE account_id = ?;";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement ps = connection.prepareStatement(sql);
             // Set prepared statement values by given parameters
-            preparedStatement.setInt(1, account_id);
-            ResultSet rs = preparedStatement.executeQuery();
+            ps.setInt(1, account_id);
+            ResultSet rs = ps.executeQuery();
             // Return account from result set that matches given query
             while(rs.next()){
                 Account account = new Account(rs.getInt("account_id"), rs.getString("username"), rs.getString("password"));
@@ -95,12 +85,8 @@ public class AccountDAO {
                 return account;
             }
         }catch(SQLException e){
-            // Close the connection if error thrown to prevent leak
-            if (!connection.isClosed()){connection.close();}
             System.out.println(e.getMessage());
         }
-        // Close connction if account not correctly found from database to prevent leak
-        if (!connection.isClosed()){connection.close();}
         return null;
     }
 
@@ -116,10 +102,10 @@ public class AccountDAO {
         try{
             // SQL logic
             String sql = "SELECT * FROM account WHERE username = ?;";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            PreparedStatement ps = connection.prepareStatement(sql);
             // Set prepared statement values by given parameters
-            preparedStatement.setString(1, username);
-            ResultSet rs = preparedStatement.executeQuery();
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
             // Return account from result set that matches given query
             while(rs.next()){
                 Account account = new Account(rs.getInt("account_id"), rs.getString("username"), rs.getString("password"));
@@ -128,13 +114,8 @@ public class AccountDAO {
                 return account;
             }
         }catch(SQLException e){
-            // Close the connection if error thrown to prevent leak
-            if (!connection.isClosed()){connection.close();}
             System.out.println(e.getMessage());
         }
-        // Close connction if account not correctly found from database to prevent leak
-        if (!connection.isClosed()){connection.close();}
         return null;
     }
-
 }

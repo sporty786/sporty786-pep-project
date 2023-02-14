@@ -1,7 +1,7 @@
-package java.DAO;
+package DAO;
 
-import java.Model.Message;
-import java.Util.ConnectionUtil;
+import Model.Message;
+import Util.ConnectionUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -19,20 +19,16 @@ public class MessageDAO {
         try{
             // SQL logic
             String sql = "SELECT * FROM message;";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            ResultSet rs = preparedStatement.executeQuery();
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 Message message = new Message(rs.getInt("message_id"), rs.getInt("posted_by"), 
                     rs.getString("message_text"), rs.getLong("time_posted_epoch"));
                 messages.add(message);
             }
         }catch(SQLException e){
-            // If SQL exception triggers, close connection to prevent leak
-            if (!connection.isClosed()){connection.close();}
             System.out.println(e.getMessage());
         }
-        // Close connection if error not triggered, to prevent leak
-        if (!connection.isClosed()){connection.close();}
         return messages;
     }
 
@@ -44,29 +40,27 @@ public class MessageDAO {
     * of the inserted message. If unsuccessful, return null.
     */
     public Message createMessage(Message message){
-        Connection conection = ConnectionUtil.getConnection();
+        Connection connection = ConnectionUtil.getConnection();
         try {
             // SQL logic
-            String sql = "INSERT INTO message (message_id, posted_by, message_text, time_posted_epoch) VALUES (?, ?, ?, ?);";
-            PreparedStatment preparedStatment = connection.prepareStatement(sql);
+            String sql = "INSERT INTO message (posted_by, message_text, time_posted_epoch) VALUES ( ?, ?, ?);";
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             // Set Prepared Statement's parameter values
-            preparedStatement.setInt(1, message.getMessage_id());
-            preparedStatement.setInt(2, message.getPosted_by());
-            preparedStatement.setString(3, message.getMessage_text());
-            preparedStatement.setLong(4, message.getTime_posted_epoch());
+            ps.setInt(2, message.getPosted_by());
+            ps.setString(3, message.getMessage_text());
+            ps.setLong(4, message.getTime_posted_epoch());
 
-            preparedStatement.executeUpdate();
-            // If message successfully created close connection to prevent leak
-            if (!connection.isClosed()){connection.close();}
-            return message;
+            ps.executeUpdate();
+            ResultSet pkeyRS = ps.getGeneratedKeys();
+            if (pkeyRS.next()){
+                int generated_message_id = (int) pkeyRS.getLong(1);
+                return new Message(generated_message_id, message.getPosted_by(), 
+                    message.getMessage_text(), message.getTime_posted_epoch());
+            }
         }catch(SQLException e){
-            // Close connection if error triggered to prevent leak
-            if (!connection.isClosed()){connection.close();}
             System.out.println(e.getMessage());
         }
-        // Close connection if not already to prevent leak
-        if (!connection.isClosed()){connection.close();}
         return null;
     }
 
@@ -91,17 +85,11 @@ public class MessageDAO {
             while(rs.next()){
                 Message message = new Message(rs.getInt("message_id"), rs.getInt("posted_by"), 
                     rs.getString("message_text"), rs.getLong("time_posted_epoch"));
-                // Close connection to prevent leak if message successfully found
-                if (!connection.isClosed()){connection.close();}
                 return message;
             }
         }catch(SQLException e){
-            // Close connection to prevent leak if error thrown
-            if (!connection.isClosed()){connection.close();}
             System.out.println(e.getMessage());
         }
-        // If message not successfully found through SQL exception, close connection to prevent leak
-        if (!connection.isClosed()){connection.close();}
         return null;
     }
 
@@ -126,12 +114,8 @@ public class MessageDAO {
             if(!connection.isClosed()){connection.close();}
             return affectedRows;
         }catch(SQLException e){
-            // Close connection if error triggered before done in try
-            if(!connection.isClosed()){connection.close();}
             System.out.println(e.getMessage());
         }
-        // Close connection if not already to prevent leak
-        if(!connection.isClosed()){connection.close();}
         // Return 0 if unsuccessful for some reason
         return 0;
     }
@@ -156,15 +140,10 @@ public class MessageDAO {
             preparedStatement.setInt(2, message_id);
 
             preparedStatement.executeUpdate();
-            // Close connection if not already to prevent leak
-            if(!connection.isClosed()){connection.close();}
             return getMessageByMessageId(message_id);
         }catch(SQLException e){
-            // Close connection if not already to prevent leak
-            if(!connection.isClosed()){connection.close();}
-            System.out.println(e.getMessag());
+            System.out.println(e.getMessage());
         }
-        if(!connection.isClosed()){connection.close();}
         return null;
     }
 
@@ -192,12 +171,8 @@ public class MessageDAO {
                     messages.add(message);
             }
         }catch(SQLException e){
-            // Close connection if error thrown to prevent leak
-            if(!connection.isClosed()){connection.close();}
             System.out.println(e.getMessage());
         }
-        // Close connection if not already to prevent leak
-        if(!connectionisClosed()){connection.close();}
         return messages;
     }
 }

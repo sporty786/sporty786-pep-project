@@ -1,7 +1,7 @@
-package java.Service;
+package Service;
 
-import java.Model.Account;
-import java.DAO.AccountDAO;
+import Model.Account;
+import DAO.AccountDAO;
 
 import java.util.List;
 
@@ -60,7 +60,7 @@ public class AccountService {
     public Account login(String username, String password){
         Account account = accountDAO.getAccountByUsername(username);
         if (account == null){return null;}
-        if (account.getpassword() == password){
+        if (account.getPassword() == password){
             return account;
         }
         return null;
