@@ -14,6 +14,7 @@ public class MessageDAO {
     * @return List<Message> 
     */
     public List<Message> getAllMessages(){
+        System.out.println("MessageDAO getAllMessages accessed.");
         Connection connection = ConnectionUtil.getConnection();
         List<Message> messages = new ArrayList<>();
         try{
@@ -38,10 +39,11 @@ public class MessageDAO {
     * @return Message
     */
     public Message createMessage(Message message){
+        System.out.println("MessageDAO createMessage accessed.");
         Connection connection = ConnectionUtil.getConnection();
         try {
             // SQL logic
-            String sql = "INSERT INTO message (posted_by, message_text, time_posted_epoch) VALUES ( ?, ?, ?);";
+            String sql = "INSERT INTO message (posted_by, message_text, time_posted_epoch) VALUES (?, ?, ?);";
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             // Set Prepared Statement's parameter values
@@ -69,6 +71,7 @@ public class MessageDAO {
     * @return Message
     */
     public Message getMessageByMessageId(int message_id){
+        System.out.println("MessageDAO getMessageByMessageId accessed.");
         Connection connection = ConnectionUtil.getConnection();
         try{
             // SQL logic
@@ -97,6 +100,7 @@ public class MessageDAO {
     * @return int
     */
     public int deleteMessageByMessageId(int message_id){
+        System.out.println("MessageDAO deleteMessageByMessageId accessed.");
         Connection connection = ConnectionUtil.getConnection();
         try{
             // SQL logic
@@ -124,10 +128,11 @@ public class MessageDAO {
     * @return Message
     */
     public Message updateMessageByMessageId(int message_id, String message_text){
+        System.out.println("MessageDAO updateMessageByMessageId accessed.");
         Connection connection = ConnectionUtil.getConnection();
         try{
             // SQL logic
-            String sql = "UPDATE message SET message_text = '?' WHERE message_id = ?;";
+            String sql = "UPDATE message SET message_text = ? WHERE message_id = ?;";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             // Set prepared statements parameter values
@@ -149,6 +154,7 @@ public class MessageDAO {
     * @return List<Message>
     */
     public List<Message> getAllMessagesByAccountId(int account_id){
+        System.out.println("MessageDAO getAllMessagesByAccountId accessed.");
         Connection connection = ConnectionUtil.getConnection();
         List<Message> messages = new ArrayList<>();
         try{

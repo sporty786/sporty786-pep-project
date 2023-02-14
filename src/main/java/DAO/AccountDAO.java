@@ -14,6 +14,7 @@ public class AccountDAO {
     * @return all Acounts
     */
     public List<Account> getAllAccounts(){
+        System.out.println("AccountDAO getAllAccounts accessed.");
         // Establish connection to database
         Connection connection = ConnectionUtil.getConnection();
         // Create array list to hold list of accounts
@@ -40,6 +41,7 @@ public class AccountDAO {
      * @return Account
      */
     public Account userRegistration(Model.Account account){
+        System.out.println("AccountDAO userRegistration accessed.");
         // Set up connection to database
         Connection connection = ConnectionUtil.getConnection();
         try{
@@ -68,6 +70,7 @@ public class AccountDAO {
      * @return Account
      */
     public Account getAccountByAccountId(int account_id){
+        System.out.println("AccountDAO getAccountByAccountId accessed.");
         // Create new connection
         Connection connection = ConnectionUtil.getConnection();
         try{
@@ -95,6 +98,7 @@ public class AccountDAO {
      * @return Account
      */
     public Account getAccountByUsername(String username){
+        System.out.println("AccountDAO getAccountByUsername accessed.");
         // Create new connection
         Connection connection = ConnectionUtil.getConnection();
         try{

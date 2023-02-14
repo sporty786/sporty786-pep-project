@@ -27,6 +27,7 @@ public class AccountService {
     * @return all authors
     */
     public List<Account> getAllAccounts(){
+        System.out.println("AccountService getAllAccounts accessed.");
         return accountDAO.getAllAccounts();
     }
 
@@ -39,6 +40,7 @@ public class AccountService {
     * @return Account
     */
     public Account userRegistration(Account account){
+        System.out.println("AccountService userRegistration accessed.");
         String username = account.getUsername();
         // Username is not blank
         if ((username == null) || (username.isBlank())){return null;}
@@ -58,6 +60,7 @@ public class AccountService {
      * @return Account
      */
     public Account login(String username, String password){
+        System.out.println("AccountService login accessed.");
         Account account = accountDAO.getAccountByUsername(username);
         if (account == null){return null;}
         if (account.getPassword() == password){
@@ -72,6 +75,7 @@ public class AccountService {
      * @return Account
      */
     public Account getAccountByAccountId(int account_id){
+        System.out.println("AccountService getAccountByAccountId accessed.");
         return accountDAO.getAccountByAccountId(account_id);
     }
 }
