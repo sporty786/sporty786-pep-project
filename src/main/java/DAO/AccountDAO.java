@@ -113,6 +113,7 @@ public class AccountDAO {
                 Account account = new Account(rs.getInt("account_id"), rs.getString("username"), rs.getString("password"));
                 // Close connection if account successfully found
                 if (!connection.isClosed()){connection.close();}
+                System.out.println("Successfully returning user by username");
                 return account;
             }
         }catch(SQLException e){

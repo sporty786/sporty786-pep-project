@@ -61,9 +61,14 @@ public class AccountService {
      */
     public Account login(String username, String password){
         System.out.println("AccountService login accessed.");
+        System.out.println("Checking account for "+username+" with password "+password);
         Account account = accountDAO.getAccountByUsername(username);
-        if (account == null){return null;}
-        if (account.getPassword() == password){
+        if (account == null){
+            System.out.println("Account is null.");
+            return null;}
+        System.out.println("Logging in account for "+account.getUsername()+" with password "+account.getPassword());
+        System.out.println("Checking provided password: " + password);
+        if (account.getPassword().equals(password)){
             return account;
         }
         return null;
