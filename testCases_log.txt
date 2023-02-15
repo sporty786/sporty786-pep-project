@@ -72,8 +72,8 @@ AccountDAO getAccountByUsername accessed.
 The object is already closed [90007-214]
 AccountDAO userRegistration accessed.
 The object is already closed [90007-214]
-[ERROR] Tests run: 7, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 8.49 s <<< FAILURE! - in AuthIntegrationTest
-[ERROR] AuthIntegrationTest.postRegisterDuplicateUsernameTest  Time elapsed: 1.028 s  <<< FAILURE!
+[ERROR] Tests run: 7, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 8.518 s <<< FAILURE! - in AuthIntegrationTest
+[ERROR] AuthIntegrationTest.postRegisterDuplicateUsernameTest  Time elapsed: 1.029 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -123,7 +123,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] AuthIntegrationTest.postRegisterTest  Time elapsed: 1.023 s  <<< FAILURE!
+[ERROR] AuthIntegrationTest.postRegisterTest  Time elapsed: 1.024 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -172,7 +172,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] AuthIntegrationTest.postRegisterThenPostLoginTest  Time elapsed: 1.023 s  <<< FAILURE!
+[ERROR] AuthIntegrationTest.postRegisterThenPostLoginTest  Time elapsed: 1.024 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -322,6 +322,7 @@ The object is already closed [90007-214]
 Accessed patchMessageGivenMessageIdHandler.
 MessageService updateMessageByMessageId accessed.
 MessageDAO updateMessageByMessageId accessed.
+MessageDAO getMessageByMessageId accessed.
 The object is already closed [90007-214]
 
 Accessed POST Registration Handler.
@@ -356,8 +357,8 @@ AccountDAO getAccountByUsername accessed.
 The object is already closed [90007-214]
 AccountDAO userRegistration accessed.
 The object is already closed [90007-214]
-[ERROR] Tests run: 20, Failures: 15, Errors: 0, Skipped: 0, Time elapsed: 20.471 s <<< FAILURE! - in MessagingIntegrationTest
-[ERROR] MessagingIntegrationTest.postAccountAndMessageThenGetMessageTest  Time elapsed: 0.999 s  <<< FAILURE!
+[ERROR] Tests run: 20, Failures: 15, Errors: 0, Skipped: 0, Time elapsed: 20.446 s <<< FAILURE! - in MessagingIntegrationTest
+[ERROR] MessagingIntegrationTest.postAccountAndMessageThenGetMessageTest  Time elapsed: 0.998 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -458,7 +459,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.patchMessageTest  Time elapsed: 1.021 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.patchMessageTest  Time elapsed: 1.026 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -509,7 +510,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postManyUsersAndMessagesThenGetAllMessages  Time elapsed: 1.021 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.postManyUsersAndMessagesThenGetAllMessages  Time elapsed: 1.023 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -561,7 +562,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postManyAccountsAndMessagesThenGetMessagesByAccountIdTest  Time elapsed: 1.023 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.postManyAccountsAndMessagesThenGetMessagesByAccountIdTest  Time elapsed: 1.02 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -613,7 +614,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.deleteMessageTest  Time elapsed: 1.021 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.deleteMessageTest  Time elapsed: 1.019 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -664,7 +665,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.getMessageAfterPatchTest  Time elapsed: 1.027 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.getMessageAfterPatchTest  Time elapsed: 1.023 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -716,7 +717,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postAccountAndTooLongMessage  Time elapsed: 1.021 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.postAccountAndTooLongMessage  Time elapsed: 1.029 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -766,7 +767,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.patchMessageTooLongTest  Time elapsed: 1.02 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.patchMessageTooLongTest  Time elapsed: 1.021 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -817,7 +818,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.deletedMessageShouldNotExistTest  Time elapsed: 1.024 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.deletedMessageShouldNotExistTest  Time elapsed: 1.027 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -869,7 +870,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.patchMessageBlankTest  Time elapsed: 1.02 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.patchMessageBlankTest  Time elapsed: 1.022 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -920,7 +921,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postManyAccountsAndMessagesTest  Time elapsed: 1.022 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.postManyAccountsAndMessagesTest  Time elapsed: 1.02 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -1021,7 +1022,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postAccountTest  Time elapsed: 1.021 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.postAccountTest  Time elapsed: 1.023 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -1070,7 +1071,7 @@ java.lang.AssertionError: expected:<200> but was:<400>
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
 
-[ERROR] MessagingIntegrationTest.postAccountAndMessageAndGetAllMessagesTest  Time elapsed: 1.02 s  <<< FAILURE!
+[ERROR] MessagingIntegrationTest.postAccountAndMessageAndGetAllMessagesTest  Time elapsed: 1.019 s  <<< FAILURE!
 java.lang.AssertionError: expected:<200> but was:<400>
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
@@ -1149,8 +1150,8 @@ java.lang.AssertionError: expected:<200> but was:<400>
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  32.763 s
-[INFO] Finished at: 2023-02-15T18:35:22Z
+[INFO] Total time:  34.302 s
+[INFO] Finished at: 2023-02-15T18:49:10Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M7:test (default-test) on project Challenges: There are test failures.
 [ERROR] 

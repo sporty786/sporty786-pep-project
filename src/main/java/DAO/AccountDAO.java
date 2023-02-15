@@ -14,7 +14,7 @@ public class AccountDAO {
     * @return all Acounts
     */
     public List<Account> getAllAccounts(){
-        System.out.println("AccountDAO getAllAccounts accessed.");
+        // System.out.println("AccountDAO getAllAccounts accessed.");      // Debugging code.
         // Establish connection to database
         Connection connection = ConnectionUtil.getConnection();
         // Create array list to hold list of accounts
@@ -41,7 +41,7 @@ public class AccountDAO {
      * @return Account
      */
     public Account userRegistration(Model.Account account){
-        System.out.println("AccountDAO userRegistration accessed.");
+        // System.out.println("AccountDAO userRegistration accessed.");        // Debugging code
         // Set up connection to database
         Connection connection = ConnectionUtil.getConnection();
         try{
@@ -70,7 +70,7 @@ public class AccountDAO {
      * @return Account
      */
     public Account getAccountByAccountId(int account_id){
-        System.out.println("AccountDAO getAccountByAccountId accessed.");
+        // System.out.println("AccountDAO getAccountByAccountId accessed.");       // Debugging code
         // Create new connection
         Connection connection = ConnectionUtil.getConnection();
         try{
@@ -98,7 +98,7 @@ public class AccountDAO {
      * @return Account
      */
     public Account getAccountByUsername(String username){
-        System.out.println("AccountDAO getAccountByUsername accessed.");
+        // System.out.println("AccountDAO getAccountByUsername accessed.");        // Debugging code
         // Create new connection
         Connection connection = ConnectionUtil.getConnection();
         try{
@@ -110,10 +110,8 @@ public class AccountDAO {
             ResultSet rs = ps.executeQuery();
             // Return account from result set that matches given query
             while(rs.next()){
-                Account account = new Account(rs.getInt("account_id"), rs.getString("username"), rs.getString("password"));
-                // Close connection if account successfully found
-                if (!connection.isClosed()){connection.close();}
-                System.out.println("Successfully returning user by username");
+                Account account = new Account(rs.getInt("account_id"), 
+                    rs.getString("username"), rs.getString("password"));
                 return account;
             }
         }catch(SQLException e){

@@ -26,7 +26,7 @@ public class MessageService {
     * of all messages in database. Return empty list if no messages.
     */
     public List<Message> getAllMessages(){
-        System.out.println("MessageService getAllMessages accessed.");
+        // System.out.println("MessageService getAllMessages accessed.");      // Debugging code
         return messageDAO.getAllMessages();
     }
 
@@ -37,7 +37,7 @@ public class MessageService {
      * @return Message
     */
      public Message createMessage(Message message){
-        System.out.println("MessageService createMessage accessed.");
+        // System.out.println("MessageService createMessage accessed.");       // Debugging code
         String message_text = message.getMessage_text();
         AccountService accountService = new AccountService();
         // message_text cannot be blank
@@ -56,7 +56,7 @@ public class MessageService {
      * @return Message
      */
      public Message getMessageByMessageId(int message_id){
-        System.out.println("MessageService getMessageByMessageId accessed.");
+        // System.out.println("MessageService getMessageByMessageId accessed.");       // Debugging code
         return messageDAO.getMessageByMessageId(message_id);
      }
 
@@ -67,7 +67,7 @@ public class MessageService {
      * @return Message
      */
     public Message deleteMessageByMessageId(int message_id){
-        System.out.println("MessageService deleteMessageByMessageId accessed.");
+        // System.out.println("MessageService deleteMessageByMessageId accessed.");        // Debugging code
         Message message = messageDAO.getMessageByMessageId(message_id);
         if (messageDAO.deleteMessageByMessageId(message_id) > 0){return message;}
         return null;
@@ -81,7 +81,7 @@ public class MessageService {
      * @return Message
      */
      public Message updateMessageByMessageId(int message_id, String message_text){
-        System.out.println("MessageService updateMessageByMessageId accessed.");
+        // System.out.println("MessageService updateMessageByMessageId accessed.");        // Debugging code
         return messageDAO.updateMessageByMessageId(message_id, message_text);
      }
 
@@ -92,7 +92,7 @@ public class MessageService {
      * @return List<Message>
      */
     public List<Message> getAllMessagesByAccountId(int account_id){
-        System.out.println("MessageService getAllMessagesByAccountId accessed.");
+        // System.out.println("MessageService getAllMessagesByAccountId accessed.");       // Debugging code
         return messageDAO.getAllMessagesByAccountId(account_id);
     }
 }

@@ -27,7 +27,7 @@ public class AccountService {
     * @return all authors
     */
     public List<Account> getAllAccounts(){
-        System.out.println("AccountService getAllAccounts accessed.");
+        // System.out.println("AccountService getAllAccounts accessed.");      // Debugging code
         return accountDAO.getAllAccounts();
     }
 
@@ -40,7 +40,7 @@ public class AccountService {
     * @return Account
     */
     public Account userRegistration(Account account){
-        System.out.println("AccountService userRegistration accessed.");
+        // System.out.println("AccountService userRegistration accessed.");        // Debugging code
         String username = account.getUsername();
         // Username is not blank
         if ((username == null) || (username.isBlank())){return null;}
@@ -60,14 +60,9 @@ public class AccountService {
      * @return Account
      */
     public Account login(String username, String password){
-        System.out.println("AccountService login accessed.");
-        System.out.println("Checking account for "+username+" with password "+password);
+        // System.out.println("AccountService login accessed.");       // Debugging code
         Account account = accountDAO.getAccountByUsername(username);
-        if (account == null){
-            System.out.println("Account is null.");
-            return null;}
-        System.out.println("Logging in account for "+account.getUsername()+" with password "+account.getPassword());
-        System.out.println("Checking provided password: " + password);
+        if (account == null){return null;}
         if (account.getPassword().equals(password)){
             return account;
         }
@@ -80,7 +75,7 @@ public class AccountService {
      * @return Account
      */
     public Account getAccountByAccountId(int account_id){
-        System.out.println("AccountService getAccountByAccountId accessed.");
+        // System.out.println("AccountService getAccountByAccountId accessed.");       // Debugging code
         return accountDAO.getAccountByAccountId(account_id);
     }
 }

@@ -14,7 +14,7 @@ public class MessageDAO {
     * @return List<Message> 
     */
     public List<Message> getAllMessages(){
-        System.out.println("MessageDAO getAllMessages accessed.");
+        // System.out.println("MessageDAO getAllMessages accessed.");      // Debugging code
         Connection connection = ConnectionUtil.getConnection();
         List<Message> messages = new ArrayList<>();
         try{
@@ -39,7 +39,7 @@ public class MessageDAO {
     * @return Message
     */
     public Message createMessage(Message message){
-        System.out.println("MessageDAO createMessage accessed.");
+        // System.out.println("MessageDAO createMessage accessed.");       // Debugging code
         Connection connection = ConnectionUtil.getConnection();
         try {
             // SQL logic
@@ -71,7 +71,7 @@ public class MessageDAO {
     * @return Message
     */
     public Message getMessageByMessageId(int message_id){
-        System.out.println("MessageDAO getMessageByMessageId accessed.");
+        // System.out.println("MessageDAO getMessageByMessageId accessed.");       // Debugging code
         Connection connection = ConnectionUtil.getConnection();
         try{
             // SQL logic
@@ -100,7 +100,7 @@ public class MessageDAO {
     * @return int
     */
     public int deleteMessageByMessageId(int message_id){
-        System.out.println("MessageDAO deleteMessageByMessageId accessed.");
+        // System.out.println("MessageDAO deleteMessageByMessageId accessed.");        // Debugging code
         Connection connection = ConnectionUtil.getConnection();
         try{
             // SQL logic
@@ -110,8 +110,6 @@ public class MessageDAO {
             // Set prepared statement's values with parameter
             preparedStatement.setInt(1, message_id);
             int affectedRows = preparedStatement.executeUpdate();
-            // Close the connection and return updated rows if successful
-            if(!connection.isClosed()){connection.close();}
             return affectedRows;
         }catch(SQLException e){
             System.out.println(e.getMessage());
@@ -121,14 +119,15 @@ public class MessageDAO {
     }
 
     /**
-    * Modify a message body of the message with the given message_id. If 
-    successful return the new updated message. Else return null.
+    * Modify a message body of the message with the given message_id. If successful 
+    * return the new updated message. Else return null. Also returns null if updated 
+    * message is blank.
     * @param message_id
     * @param message_text
     * @return Message
     */
     public Message updateMessageByMessageId(int message_id, String message_text){
-        System.out.println("MessageDAO updateMessageByMessageId accessed.");
+        // System.out.println("MessageDAO updateMessageByMessageId accessed.");        // Debugging code
         if (message_text.isBlank() || getMessageByMessageId(message_id) == null){return null;}
         Connection connection = ConnectionUtil.getConnection();
         try{
@@ -155,8 +154,10 @@ public class MessageDAO {
     * @return List<Message>
     */
     public List<Message> getAllMessagesByAccountId(int account_id){
-        System.out.println("MessageDAO getAllMessagesByAccountId accessed.");
+        // System.out.println("MessageDAO getAllMessagesByAccountId accessed.");       // Debugging code
+        // Establish connection.
         Connection connection = ConnectionUtil.getConnection();
+        // Create list to store accessed messages from database belonging to user
         List<Message> messages = new ArrayList<>();
         try{
             // SQL logic
