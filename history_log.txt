@@ -1,7 +1,7 @@
-commit b96f435902ce4a294dba10abefb17aa29b76c7ca
+commit 621bff72e823e18f32f9ae1ea9795b2373fca23d
 Author: sporty786 <michelle.e.tracy@gmail.com>
-Date:   Tue Feb 14 21:00:22 2023 +0000
+Date:   Wed Feb 15 18:34:46 2023 +0000
 
-    Trying writeValueAsString on registration return
+    Corrected path for POST message, debugging
 
- 3 files changed, 32 insertions(+), 32 deletions(-)
+ 4 files changed, 427 insertions(+), 1210 deletions(-)

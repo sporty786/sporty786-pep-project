@@ -129,6 +129,7 @@ public class MessageDAO {
     */
     public Message updateMessageByMessageId(int message_id, String message_text){
         System.out.println("MessageDAO updateMessageByMessageId accessed.");
+        if (message_text.isBlank() || getMessageByMessageId(message_id) == null){return null;}
         Connection connection = ConnectionUtil.getConnection();
         try{
             // SQL logic

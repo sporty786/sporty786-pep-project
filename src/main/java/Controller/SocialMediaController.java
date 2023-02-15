@@ -116,12 +116,8 @@ public class SocialMediaController {
         System.out.println("\nAccessed getOneMessageGivenMessageIdHandler.");
         ObjectMapper om = new ObjectMapper();
         int message_id = Integer.parseInt(ctx.pathParam("message_id"));
-        System.out.println("path parameter message id: " + message_id);
         Message message = messageService.getMessageByMessageId(message_id);
-        if (message != null){
-            System.out.println("non-null message detected");
-            ctx.json(message);}
-        else {System.out.println("Null message returned");}
+        if (message != null){ctx.json(message);}
         ctx.status(200);
     }
 
@@ -149,9 +145,9 @@ public class SocialMediaController {
     private void patchMessageGivenMessageIdHandler(Context ctx)throws JsonProcessingException {
         System.out.println("\nAccessed patchMessageGivenMessageIdHandler.");
         ObjectMapper om = new ObjectMapper();
-        Message newMessage = om.readValue(ctx.body(), Message.class);
+        String message_text = om.readValue(ctx.body(), Message.class).getMessage_text();
         int message_id = Integer.parseInt(ctx.pathParam("message_id"));
-        Message message = messageService.updateMessageByMessageId(message_id, newMessage.getMessage_text());
+        Message message = messageService.updateMessageByMessageId(message_id, message_text);
         if (message != null){
             ctx.json(message);
             ctx.status(200);
