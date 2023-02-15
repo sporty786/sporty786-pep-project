@@ -47,9 +47,9 @@ public class MessageDAO {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             // Set Prepared Statement's parameter values
-            ps.setInt(2, message.getPosted_by());
-            ps.setString(3, message.getMessage_text());
-            ps.setLong(4, message.getTime_posted_epoch());
+            ps.setInt(1, message.getPosted_by());
+            ps.setString(2, message.getMessage_text());
+            ps.setLong(3, message.getTime_posted_epoch());
 
             ps.executeUpdate();
             ResultSet pkeyRS = ps.getGeneratedKeys();

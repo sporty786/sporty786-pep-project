@@ -32,12 +32,13 @@ public class SocialMediaController {
         Javalin app = Javalin.create();
         app.post("/register", this::postUserRegistrationHandler);
         app.post("/login", this::postLoginHandler);
-        app.post("/message", this::postCreateNewMessageHandler);
+        app.post("/messages", this::postCreateNewMessageHandler);
         app.get("/messages", this::getAllMessagesHandler);
         app.get("/messages/{message_id}", this::getOneMessageGivenMessageIdHandler);
         app.delete("/messages/{message_id}", this::deleteMessageGivenMessageIdHandler);
         app.patch("/messages/{message_id}", this::patchMessageGivenMessageIdHandler);
         app.get("/accounts/{account_id}/messages", this::getAllMessagesFromUserGivenAccountIdHandler);
+        // Debugging handler
         app.get("/accounts", this::getAllAccountsHandler);
 
         return app;
@@ -115,8 +116,12 @@ public class SocialMediaController {
         System.out.println("\nAccessed getOneMessageGivenMessageIdHandler.");
         ObjectMapper om = new ObjectMapper();
         int message_id = Integer.parseInt(ctx.pathParam("message_id"));
+        System.out.println("path parameter message id: " + message_id);
         Message message = messageService.getMessageByMessageId(message_id);
-        if (message != null){ctx.json(message);}
+        if (message != null){
+            System.out.println("non-null message detected");
+            ctx.json(message);}
+        else {System.out.println("Null message returned");}
         ctx.status(200);
     }
 
@@ -144,9 +149,9 @@ public class SocialMediaController {
     private void patchMessageGivenMessageIdHandler(Context ctx)throws JsonProcessingException {
         System.out.println("\nAccessed patchMessageGivenMessageIdHandler.");
         ObjectMapper om = new ObjectMapper();
-        String message_text = om.readValue(ctx.body(), String.class);
+        Message newMessage = om.readValue(ctx.body(), Message.class);
         int message_id = Integer.parseInt(ctx.pathParam("message_id"));
-        Message message = messageService.updateMessageByMessageId(message_id, message_text);
+        Message message = messageService.updateMessageByMessageId(message_id, newMessage.getMessage_text());
         if (message != null){
             ctx.json(message);
             ctx.status(200);
@@ -166,6 +171,10 @@ public class SocialMediaController {
         ctx.status(200);
     }
 
+    /** 
+     * Return all accounts in the database. Primarily a handler for debugging.
+     * @param ctx
+     */
     private void getAllAccountsHandler(Context ctx){
         System.out.println("\nAccessed getAllAccountsHandler.");
         List<Account> accounts = accountService.getAllAccounts();
